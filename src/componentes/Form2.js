@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import classes from './Form.module.css';
 
-// Definir el estado inicial y la función reductora
+
 const formReducer = (state, action) => {
   switch (action.type) {
     case 'EMAIL_INPUT':
@@ -22,7 +22,7 @@ const formReducer = (state, action) => {
 };
 
 function Form() {
-  // Inicializar el estado usando useReducer
+  
   const [formState, dispatchForm] = useReducer(formReducer, {
     enteredEmail: '',
     emailIsValid: false,
@@ -32,7 +32,7 @@ function Form() {
 
   const formIsValid = formState.emailIsValid && formState.passwordIsValid;
 
-  // Redefinir las funciones de cambio de entrada para enviar acciones al reductor
+  
   const changeEmailHandler = (event) => {
     const value = event.target.value;
     dispatchForm({ type: 'EMAIL_INPUT', value });
